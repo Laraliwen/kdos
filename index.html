@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sommaire - Listes de cadeaux</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <style>
+    /* Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Quicksand', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      background-image: url('fond_accueil.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-align: center;
+
+      /* ✅ flou plus léger */
+      backdrop-filter: blur(1.5px) brightness(0.95);
+      -webkit-backdrop-filter: blur(1.5px) brightness(0.95);
+    }
+
+    /* ---- Titre ---- */
+    h1 {
+      font-family: 'Barriecito', cursive;
+      font-weight: 700;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+      /* ✅ ombre renforcée */
+      text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ---- Sous-titre ---- */
+    p {
+      font-family: "Poiret One", sans-serif;
+      font-size: clamp(1.2rem, 2vw, 2rem);
+      color: #f9f9f9;
+      margin-bottom: 60px;
+      /* ✅ ombre plus visible */
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.65);
+    }
+
+    /* ---- Grille de boutons ---- */
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      width: 100%;
+      max-width: 850px;
+    }
+
+    @media (max-width: 700px) {
+      .buttons { grid-template-columns: 1fr; }
+    }
+
+    /* ---- Style des boutons ---- */
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.95);
+      font-family: 'Barriecito', cursive;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      letter-spacing: 1px;
+      transition: all 0.25s ease-in-out;
+      position: relative;
+      overflow: hidden;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.25);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    }
+
+    .btn:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.85;
+      z-index: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 25px;
+      background: var(--gradient);
+    }
+
+    /* ✅ ombrage texte plus marqué */
+    .btn span {
+      position: relative;
+      z-index: 1;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.55);
+    }
+
+    .btn1 { --gradient: linear-gradient(135deg, #ffb325, #ffd45d, #ffdc7a); }
+    .btn2 { --gradient: linear-gradient(135deg, #440202, #8f0a0a, #eb5324); }
+    .btn3 { --gradient: linear-gradient(135deg, #09202b, #1a495e, #60b6dd); }
+    .btn4 { --gradient: linear-gradient(135deg, #490620, #961647, #f16b9f); }
+  </style>
+</head>
+<body>
+  <h1>Les listes de cadeaux</h1>
+  <p>Choisissez la page à afficher</p>
+
+  <div class="buttons">
+    <a class="btn btn1" href="isaac_anniv.html"><span>Isaac<br>(Anniversaire)</span></a>
+    <a class="btn btn2" href="isaac_noel.html"><span>Isaac<br>(Noël)</span></a>
+    <a class="btn btn3" href="nico_noel.html"><span>Nicolas</span></a>
+    <a class="btn btn4" href="cyrielle_noel.html"><span>Cyrielle</span></a>
+  </div>
+</body>
+</html>
