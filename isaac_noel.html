@@ -29,7 +29,7 @@
       font-weight: 700;
       font-size: 60px;
       margin-bottom: 50px;
-      color:rgba(255, 189, 189, 0.74)
+      color: rgba(255, 189, 189, 0.74);
     }
 
     h2 {
@@ -42,68 +42,6 @@
       font-weight: 400;
       font-size: 25px;
       margin-bottom: 40px;
-    }
-    
-    /* Bloc mot de passe effet verre givré rouge pâle */
-    .glass-box {
-      background: rgba(255, 200, 200, 0.15);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-radius: 20px;
-      border: 2px solid rgba(255, 72, 72, 0.39);
-      box-shadow: 0 8px 24px rgba(220, 50, 50, 0.2);
-      color: white;
-      padding: 40px 30px;
-      max-width: 400px;
-      margin: 40px auto;
-      text-align: center;
-      animation: fadeIn 0.8s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .input-group {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .glass-box input[type="password"] {
-      padding: 12px 16px;
-      border: none;
-      border-radius: 10px;
-      font-size: 18px;
-      width: 60%;
-      background: rgba(255, 255, 255, 0.85);
-      color: #333;
-    }
-
-    .glass-box button {
-      padding: 12px 18px;
-      background: rgba(210, 60, 60, 0.8);
-      color: #fff;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .glass-box button:hover {
-      background: rgba(170, 30, 30, 0.9);
-    }
-
-    #error {
-      display: none;
-      color: #680d0d;
-      margin-top: 10px;
-      font-size: 18px;
-      font-weight: 700;
     }
 
     /* Grille des cadeaux */
@@ -164,18 +102,16 @@
 
     /* Bouton retour */
     .btn {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(255, 73, 73, 0.6);
-      padding: 10px 18px;
-      border-radius: 8px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 20px;
-      transition: 0.3s;
-    }
+  display: inline-block;
+  margin: 40px auto;
+  background: rgba(255, 79, 79, 0.6);
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.3s;
+}
 
     .btn:hover {
       background: rgba(240, 44, 44, 0.6);
@@ -199,19 +135,7 @@
 <body>
   <h1>Bienvenue sur la liste <br> de Noël d'Isaac</h1>
 
-  <div id="login" class="glass-box">
-    <h2>🔒 Accès réservé</h2>
-    <p>Entrez le mot de passe pour consulter la liste</p>
-
-    <div class="input-group">
-      <input type="password" id="password" placeholder="Mot de passe">
-      <button onclick="checkPassword()">Valider</button>
-    </div>
-
-    <p id="error">❌ Mauvais mot de passe ❌</p>
-  </div>
-
-  <div id="content" style="display:none;">
+  <div id="content">
     <h2>Clique sur les références des cadeaux pour en savoir plus !</h2>
 
     <ul class="grille">
@@ -255,24 +179,5 @@
 
   <a href="index.html" class="btn">⬅ Retour à l'accueil</a>
 
-  <script>
-    const correctPassword = "NoelIsaac";
-
-    function checkPassword() {
-      const input = document.getElementById("password").value;
-      const error = document.getElementById("error");
-      if (input === correctPassword) {
-        document.getElementById("login").style.display = "none";
-        document.getElementById("content").style.display = "block";
-        error.style.display = "none";
-      } else {
-        error.style.display = "block";
-      }
-    }
-
-    document.getElementById("password").addEventListener("keyup", e => {
-      if (e.key === "Enter") checkPassword();
-    });
-  </script>
 </body>
 </html>
