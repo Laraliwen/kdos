@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liste de Cyrielle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('bouton_cyrielle.jpg');
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: "Poiret One", sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 40px;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    h1, h2 {
+      color: #fff6f6;
+      text-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 60px;
+      margin-bottom: 50px;
+      color: rgba(255, 212, 226, 0.712);
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 25px;
+      margin-bottom: 40px;
+    }
+
+    /* Grille : 2 colonnes */
+    ul.grille {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    ul.grille li.tuile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 220, 230, 0.15);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(255, 120, 160, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      color: #fff;
+      text-align: center;
+      line-height: 2;
+    }
+
+    ul.grille li.tuile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(255, 140, 180, 0.4);
+    }
+
+    ul.grille li.tuile img {
+      width: 45%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    ul.grille li.tuile p {
+      flex: 1;
+      margin: 20px;
+      font-size: 24px;
+      font-weight: 600;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+
+    .lien-normal {
+      color: #fff6f6;
+      text-decoration: none;
+    }
+
+    .lien-normal:hover {
+      text-decoration: underline;
+    }
+
+    /* Bouton retour */
+    .btn {
+      display: inline-block;
+      margin: 40px auto;
+      background: rgba(240, 98, 141, 0.6);
+      padding: 10px 18px;
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: rgba(180, 60, 100, 0.6);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      ul.grille {
+        grid-template-columns: 1fr;
+      }
+      ul.grille li.tuile {
+        flex-direction: column;
+      }
+      ul.grille li.tuile img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Bienvenue sur la liste <br> de Noël de Cyrielle</h1>
+
+  <div id="content">
+    <h2>Clique sur les références des cadeaux pour en savoir plus !</h2>
+
+    <ul class="grille">
+      <li class="tuile">
+        <img src="soup_maker.jpg" alt="Soup Maker">
+        <p><a href="https://urlr.me/4QGkKJ" target="_blank" class="lien-normal">
+          Soup Maker<br>Philips
+        </a></p>
+      </li>
+
+      <li class="tuile">
+        <img src="chaussures_tennis.jpg" alt="Carte cadeau">
+        <p><a href="https://urlr.me/pT5mkw" target="_blank" class="lien-normal">
+          Carte cadeau<br>Intersport
+        </a></p>
+      </li>
+
+      <li class="tuile">
+        <img src="seche_cheveux.jpg" alt="Seche-cheveux">
+        <p><a href="https://urlr.me/KqVceb" target="_blank" class="lien-normal">
+          Sèche-cheveux<br>GHD Air
+        </a></p>
+      </li>
+
+      <li class="tuile">
+        <img src="atlantis.jpg" alt="Atlantis">
+        <p><a href="https://urlr.me/UQJRF5" target="_blank" class="lien-normal">
+          Une carte cadeau<br>Atlantis
+        </a></p>
+      </li>
+
+      <li class="tuile">
+        <img src="parfum.jpg" alt="Parfum">
+        <p><a href="https://tinyurl.com/4vwwjwjf" target="_blank" class="lien-normal">
+          Coco Mademoiselle<br>Eau de parfum
+        </a></p>
+      </li>
+
+      <li class="tuile">
+        <img src="chattam.jpg" alt="Chattam">
+        <p><a href="https://urlr.me/UmSJfV" target="_blank" class="lien-normal">
+          8,2 secondes
+        </a></p>
+      </li>
+
+      <li class="tuile">
+        <img src="bridgerton.jpg" alt="Chattam">
+        <p><a href="https://tinyurl.com/45798ybb" target="_blank" class="lien-normal">
+          La chronique des Bridgerton<br>Édition reliée - Tomes 1-2, 3-4, 5-6, 7-8, 9, La Reine Charlotte
+        </a></p>
+      </li>
+
+            <li class="tuile">
+        <img src="miserables.jpg" alt="Chattam">
+        <p><a href="https://tinyurl.com/5dsutb67" target="_blank" class="lien-normal">
+          Coffret Les Misérables<br>Victor Hugo
+        </a></p>
+      </li>
+    </ul>
+  </div>
+
+  <a href="index.html" class="btn">⬅ Retour à l'accueil</a>
+</body>
+</html>
