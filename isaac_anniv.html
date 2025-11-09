@@ -43,7 +43,7 @@
       font-weight: 400;
       font-size: 25px;
       margin-bottom: 10px;
-      word-wrap: break-word; /* force le texte à revenir à la ligne si nécessaire */
+      word-wrap: break-word;
     }
 
     /* Texte secondaire plus petit */
@@ -56,21 +56,20 @@
       word-wrap: break-word;
     }
 
-    /* Grille : 2 colonnes */
+    /* Grille des cadeaux */
     ul.grille {
       list-style: none;
       padding: 0;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
       max-width: 1000px;
       margin: 0 auto;
     }
 
-    /* Tuiles cadeaux */
     ul.grille li.tuile {
       display: flex;
-      flex-direction: column; /* image et texte empilés verticalement */
+      flex-direction: column; /* image au-dessus du texte */
       align-items: center;
       background: rgba(200, 210, 255, 0.15);
       backdrop-filter: blur(8px);
@@ -79,21 +78,21 @@
       overflow: hidden;
       padding: 10px;
       box-shadow: 0 4px 10px rgba(255, 187, 0, 0.25);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      color: #fff;
       text-align: center;
+      max-width: 400px; /* limite la largeur de chaque tuile */
+      margin: 0 auto;
       line-height: 1.4;
     }
 
     ul.grille li.tuile:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(255, 187, 0, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     ul.grille li.tuile img {
-      width: 100%;       /* prend toute la largeur de la tuile */
+      width: 100%;       /* image prend toute la largeur de la tuile */
       height: auto;
-      object-fit: cover;
       margin-bottom: 10px;
     }
 
@@ -129,12 +128,7 @@
       ul.grille {
         grid-template-columns: 1fr;
       }
-      ul.grille li.tuile img {
-        width: 100%;
-        height: auto;
-      }
     }
-
   </style>
 </head>
 <body>

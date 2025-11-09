@@ -41,13 +41,18 @@
     p {
       font-weight: 400;
       font-size: 25px;
-      margin-bottom: 40px;
+      margin-bottom: 10px;
+      word-wrap: break-word;
     }
-    
-    p1 {
+
+    /* Texte secondaire plus petit */
+    .small-text {
+      font-size: 16px;
       font-weight: 400;
-      font-size: 17px;
-      margin-bottom: 40px;
+      margin-top: 5px;
+      color: #fff;
+      line-height: 1.3;
+      word-wrap: break-word;
     }
 
     /* Grille des cadeaux */
@@ -55,7 +60,7 @@
       list-style: none;
       padding: 0;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
       max-width: 1000px;
       margin: 0 auto;
@@ -63,38 +68,31 @@
 
     ul.grille li.tuile {
       display: flex;
+      flex-direction: column; /* image au-dessus du texte */
       align-items: center;
-      justify-content: center;
       background: rgba(255, 240, 240, 0.15);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-radius: 16px;
       overflow: hidden;
+      padding: 10px;
       box-shadow: 0 4px 10px rgba(255, 120, 120, 0.25);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      color: #fff;
       text-align: center;
-      line-height: 2;
+      max-width: 400px; /* limite la largeur de chaque tuile */
+      margin: 0 auto;
+      line-height: 1.4;
     }
 
     ul.grille li.tuile:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(255, 140, 140, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     ul.grille li.tuile img {
-      width: 45%;
-      height: 100%;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    ul.grille li.tuile p {
-      flex: 1;
-      margin: 20px;
-      font-size: 24px;
-      font-weight: 600;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      width: 100%;       /* image prend toute la largeur de la tuile */
+      height: auto;
+      margin-bottom: 10px;
     }
 
     .lien-normal {
@@ -108,16 +106,16 @@
 
     /* Bouton retour */
     .btn {
-  display: inline-block;
-  margin: 40px auto;
-  background: rgba(255, 79, 79, 0.6);
-  padding: 10px 18px;
-  border-radius: 8px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 20px;
-  transition: 0.3s;
-}
+      display: inline-block;
+      margin: 40px auto;
+      background: rgba(255, 79, 79, 0.6);
+      padding: 10px 18px;
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      transition: 0.3s;
+    }
 
     .btn:hover {
       background: rgba(240, 44, 44, 0.6);
@@ -127,13 +125,6 @@
     @media (max-width: 900px) {
       ul.grille {
         grid-template-columns: 1fr;
-      }
-      ul.grille li.tuile {
-        flex-direction: column;
-      }
-      ul.grille li.tuile img {
-        width: 100%;
-        height: auto;
       }
     }
   </style>
@@ -152,7 +143,7 @@
             Vélo 20" <br> avec des vitesses
           </a>
         </p>
-        <p1>Cadeau commun - modèle à définir</p1>
+        <p class="small-text">Cadeau commun - modèle à définir</p>
       </li>
 
       <li class="tuile">
@@ -171,7 +162,7 @@
             Un pack Lunii FLAM <br> + coque + casque
           </a>
         </p>
-        <p1>À voir avec Maman & Nico <br> Réduction de 50€ en renvoyant l'ancienne</p1>
+        <p class="small-text">À voir avec Maman & Nico <br> Réduction de 50€ en renvoyant l'ancienne</p>
       </li>
 
       <li class="tuile">
