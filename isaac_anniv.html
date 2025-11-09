@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Liste d'anniversaire Isaac 🎂</title>
   <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-
   <style>
     body {
       background-image: url('fond_anniversaire.jpg');
@@ -42,58 +41,54 @@
     p {
       font-weight: 400;
       font-size: 25px;
-      margin-bottom: 10px;
-      word-wrap: break-word;
+      margin: 0;
     }
 
-    /* Texte secondaire plus petit */
-    .small-text {
-      font-size: 16px;
-      font-weight: 400;
-      margin-top: 5px;
-      color: #fff;
-      line-height: 1.3;
-      word-wrap: break-word;
-    }
-
-    /* Grille des cadeaux */
+    /* Grille : 2 colonnes */
     ul.grille {
       list-style: none;
       padding: 0;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       max-width: 1000px;
       margin: 0 auto;
     }
 
+    /* Tuiles cadeaux */
     ul.grille li.tuile {
       display: flex;
-      flex-direction: column; /* image au-dessus du texte */
+      flex-direction: column;
       align-items: center;
       background: rgba(200, 210, 255, 0.15);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-radius: 16px;
       overflow: hidden;
-      padding: 10px;
       box-shadow: 0 4px 10px rgba(255, 187, 0, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      color: #fff;
       text-align: center;
-      max-width: 400px; /* limite la largeur de chaque tuile */
-      margin: 0 auto;
-      line-height: 1.4;
+      padding: 15px;
     }
 
     ul.grille li.tuile:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(255, 187, 0, 0.4);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     ul.grille li.tuile img {
-      width: 100%;       /* image prend toute la largeur de la tuile */
-      height: auto;
-      margin-bottom: 10px;
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    ul.grille li.tuile p {
+      font-size: 24px;
+      font-weight: 600;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      line-height: 1.3;
     }
 
     .lien-normal {
@@ -173,14 +168,13 @@
       <li class="tuile">
         <img src="boite_lego.jpg" alt="Boîte Lego">
         <p>Boîte de rangement Lego</p>
-        <p class="small-text">Voir avec Maman & Nico, cadeau stocké à la maison</p>
       </li>
 
       <li class="tuile">
         <img src="beyblade.jpg" alt="Beyblade">
         <p>
           <a href="https://urlr.me/xQZtgd" target="_blank" class="lien-normal">
-            Beyblade X<br>Set de Combat Descente-Choc 
+            Beyblade X<br>Set de Combat Descente-Choc
           </a>
         </p>
       </li>
