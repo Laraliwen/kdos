@@ -1,5 +1,5 @@
 // ---- CONFIG ----
-const API_URL = "https://script.google.com/macros/s/AKfycbzjv_ni1daK2kIAXnAIxwAGIQxNGnFWbYd97tSlpMR0tU1UXfns5F7DUGots8kAs16-/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbybMOzvjcz39CPm2wDPqRKDDgjh-EeCn4719dLYu2eAFf6EDD-xhwkNvy8NaRI2oVLE/exec";
 
 // ---- UTIL ----
 async function apiFetch(method, body) {
